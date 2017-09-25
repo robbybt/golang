@@ -1,9 +1,9 @@
 package variable
 
 import (
-	"fmt"
-	//"strconv"
 	"encoding/json"
+	"fmt"
+	"strconv"
 )
 
 func Testvar() {
@@ -28,6 +28,14 @@ func Printapapun(all ...interface{}) {
 	fmt.Println(all...)
 }
 
+func CobaConvert() {
+	a, b, c := "1", 1, 2
+	var d string = a + strconv.Itoa(b)
+	var e int
+	e, _ = strconv.Atoi(a)
+	f := c + e
+	fmt.Println(a, b, c, d, f)
+}
 func Ketiktodos() {
 	//fmt.Println("asd")
 	var vartodos todos
@@ -35,7 +43,7 @@ func Ketiktodos() {
 	vartodos = append(vartodos, todo{2, "asd"})
 	vartodos = append(vartodos, todo{3, "asd"})
 
-	//===============================================================
+	//==============================tole=================================
 	varjson := map[string]interface{}{}
 	varjson["id"] = 4
 	varjson["name"] = "cacat"
@@ -50,13 +58,17 @@ func Ketiktodos() {
 	fmt.Printf("hasil unmarshal : %v\n", cacat)
 	//================================================================
 	for _, v := range vartodos {
-		fmt.Printf("%+v\n", v)
+		fmt.Println(v.ketik())
 	}
 }
 
 type todo struct {
 	id   int    `json:"id"`
 	name string `json:"name"`
+}
+
+func (t todo) ketik() (string, string, string, string) {
+	return "ketik id :", strconv.Itoa(t.id), "name :", t.name
 }
 
 type todos []todo

@@ -28,4 +28,5 @@ func main() {
 	variable.Printapapun([]int{1, 2, 3})
 	variable.Printapapun(map[string]int{"satu": 1, "dua": 2})
 	variable.Ketiktodos()
+	variable.CobaConvert()
 }
