@@ -23,4 +23,5 @@ func main() {
 	arr = append(arr, &robbyfor.Person{"a1", "b2"})
 	robbyfor.ForeachStruct(arr)
 	robbyfor.Whilebiasa()
+	fmt.Println("asd")
 }
